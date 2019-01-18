@@ -10,16 +10,16 @@ import UIKit
 
 class FeedViewController: UITableViewController {
     
-    let urlString = "https://www.wired.com/feed/rss"
+    private let urlString = "https://www.wired.com/feed/rss"
+    private let feedCellName = "FeedCell"
     
-    let dataManager = DataManager()
-    var feedArray = [Entry]()
+    private let dataManager = DataManager()
+    private var feedArray = [Entry]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         refresh()
         
-        let feedCellName = "FeedCell"
         let nib = UINib(nibName: feedCellName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: feedCellName)
 
@@ -68,7 +68,7 @@ class FeedViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: feedCellName, for: indexPath) as! FeedCell
         
         let entry = feedArray[indexPath.row]
         cell.setupCellForEntry(entry: entry)
