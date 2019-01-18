@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        setupAppearence()
         return true
     }
 
@@ -39,6 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    //MARK: - Appearence
+    
+    fileprivate func setupAppearence() {
+        UINavigationBar.appearance().tintColor = UIColor(red: 53/255, green: 204/255, blue: 131/255, alpha: 1)    
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor(red: 14/255, green: 32/255, blue: 47/255, alpha: 1)]
     }
 
 

@@ -16,6 +16,7 @@ class EntryViewController: UIViewController {
     @IBOutlet weak var entryWebView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        assert(link != nil, "This is input requirement and must be set to correct value.")
         entryWebView.load(URLRequest(url: link!))
     }
 
